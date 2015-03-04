@@ -24,10 +24,11 @@ using the AnnoSys service.</p>
 <table style="margin-top: 25px;">
 <tr><th>Name</th><th>Annotate</th></tr>
 <?php
-$stmt = $dbh->query('select * from comparison where inNsr = 0 order by scientificName');
+$stmt = $dbh->query('select * from comparison where inNsr = 0 order by scientificName limit 0,1000');
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '<tr id="id_' . $row['id'] . '"><td>' . $row['scientificName'] . "</td>
-        <td><input type='checkbox' onclick='annotate(" . $row['gbifKey'] . ")'/></td></tr>\n";
+        <td><input type='checkbox' onclick='annotate(" . $row['id'] . "," .
+        $row['gbifKey'] . ")'/></td></tr>\n";
 }
 ?>
 </form>

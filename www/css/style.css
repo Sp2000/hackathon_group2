@@ -10,3 +10,8 @@
  th, td {
 	text-align: left;
  }
+
+ .marked {
+	color: red;
+ 	text-decoration: line-through;
+ }
