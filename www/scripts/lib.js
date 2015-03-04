@@ -1,0 +1,7 @@
+/**
+ *
+ */
+
+function annotate (gbifKey) {
+	return;
+}

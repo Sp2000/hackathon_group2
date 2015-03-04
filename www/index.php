@@ -3,7 +3,8 @@
 <title>Annotate the Dutch species list</title>
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script src="scripts/lib.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
