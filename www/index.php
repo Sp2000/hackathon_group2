@@ -10,9 +10,13 @@
 <body>
 <?php
 require_once 'connect.php';
+require_once 'helper.php';
+require_once 'ajax.php';
+
 $stmt = $dbh->query('select count(*) from comparison where inNsr = 1');
 $matched = $stmt->fetchColumn();
 ?>
+
 <h1>Annotate GBIF records not occurring in Nederlandse Soortenregister</h1>
 <p>The Dutch lists contains <?php echo $matched; ?> names that occur in
 GBIF records for The Netherlands. This page lists the remaining GBIF names that
