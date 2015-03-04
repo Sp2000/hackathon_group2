@@ -1,6 +1,7 @@
 <?php
+    $host = 'localhost';
     $db = 'hackathon';
-    $user = 'hack';
-    $password = 'h@ck';
-    $dbh = new PDO('mysql:host=dev2.etibioinformatics.nl;dbname=' . $db, $user, $password);
+    $user = 'root';
+    $password = 'root';
+    $dbh = new PDO('mysql:host=' . $host . ';dbname=' . $db, $user, $password);
 ?>
