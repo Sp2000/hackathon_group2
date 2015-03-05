@@ -92,7 +92,8 @@
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo '<tr id="id_' . $row['id'] . '"><td class="name">' . $row['scientificName'] . "</td>
                 <td><a href='http://www.gbif.org/species/" . $row['gbifKey'] . "#map' target='_blank'>map</a></td>
-                <td><input type='checkbox' onclick='annotate(" . $row['id'] . "," . $row['gbifKey'] . ")'/></td>
+                <td><input type='checkbox'" . (!empty($row['annotation']) ? 'checked ' : '') . "
+                    onclick='annotate(" . $row['id'] . "," . $row['gbifKey'] . ")'/></td>
                 <td class=\"annotation_message\">" . printAnnotation($row['annotation']) . "</td></tr>\n";
         }
         ?>
