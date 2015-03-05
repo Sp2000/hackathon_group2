@@ -1,7 +1,7 @@
 <?php
     $host = 'localhost';
     $db = 'hackathon';
-    $user = 'root';
-    $password = 'root';
+    $user = 'edit';
+    $password = 'wp5';
     $dbh = new PDO('mysql:host=' . $host . ';dbname=' . $db, $user, $password);
 ?>
