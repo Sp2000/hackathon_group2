@@ -49,3 +49,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 </form>
 </body>
 </html>
+<!--
+data:
+
+{"repositoryURI":"http://127.0.0.1:10080/services/annotations/BGBM/AnnoSys/1425550201320","annotator":"","time":1425550201383,"motivation":"TaxonConcept","comment":"http://rs.gbif.org/terms/ao#ImplausibleDistribution","target":"http://www.gbif.org/species/4988750","scientificName":"Abax Bonelli, 1810"}
+--->
