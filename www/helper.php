@@ -39,3 +39,12 @@ function storeAnnotation ($key, $json) {
     $stmt->execute(array($json, $key));
     unset($dbh);
 }
+
+function printAnnotation ($json) {
+    if (!$json || empty($json)) {
+        return '';
+    }
+    $data = json_decode($json);
+    return '<a href="' . $data->repositoryURI . '" target="annotation">' .
+        $data->repositoryURI . ": " . urldecode($data->comment) . '</a>';
+}
