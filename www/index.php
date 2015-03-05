@@ -27,11 +27,18 @@ do not match with the Dutch list either as a valid name or a synonym.
 Taxa that are not part of the native Dutch flora and fauna can be annotated
 using the AnnoSys service.</p>
 
+<p>Select a letter from the alphabet below to display all taxa for that letter:</p>
+
+<p><?php echo setAlphabet(); ?>
+
 <form>
-<table style="margin-top: 25px;">
+<table style="margin-top: 25px; width: 100%;">
 <tr><th>Name</th><th>Map at GBIF</th><th>Blackist</th></tr>
+
 <?php
-$stmt = $dbh->query('select * from comparison where inNsr = 0 order by scientificName limit 0,1000');
+$q = 'select * from comparison where inNsr = 0 and scientificName like ? order by scientificName';
+$stmt = $dbh->prepare($q);
+$stmt->execute(array(getLetter() . '%'));
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo '<tr id="id_' . $row['id'] . '"><td>' . $row['scientificName'] . "</td>
         <td><a href='http://www.gbif.org/species/" . $row['gbifKey'] . "#map' target='_blank'>map</a></td>
