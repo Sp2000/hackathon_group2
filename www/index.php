@@ -54,15 +54,6 @@
           <a class="navbar-brand" href="#">Annotate the Dutch species list</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
@@ -82,9 +73,11 @@
         <p><?php echo setAlphabet(); ?>
 
         <form>
-        <table style="margin-top: 25px; width: 100%;">
-        <tr><th>Name</th><th>Map at GBIF</th><th>Blackist</th><th>annotation message</th></tr>
-
+        <table class="table">
+        <thead>
+        <tr><th>Name</th><th>Map at GBIF</th><th>Blackist</th><th>Annotation</th></tr>
+        </thead>
+        <tbody>
         <?php
         $q = 'select * from comparison where inNsr = 0 and scientificName like ? order by scientificName';
         $stmt = $dbh->prepare($q);
@@ -97,6 +90,7 @@
                 <td class=\"annotation_message\">" . printAnnotation($row['annotation']) . "</td></tr>\n";
         }
         ?>
+        </tbody>
         </form> <!-- /container -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
