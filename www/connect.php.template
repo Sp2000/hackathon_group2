@@ -1,7 +1,7 @@
 <?php
     $host = 'localhost';
-    $db = 'group_2';
+    $db = 'hackathon';
     $user = 'root';
-    $password = '6A4mZ9c9';
+    $password = 'root';
     $dbh = new PDO('mysql:host=' . $host . ';dbname=' . $db, $user, $password);
 ?>
