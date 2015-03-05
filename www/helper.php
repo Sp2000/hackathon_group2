@@ -16,9 +16,9 @@ function setAlphabet () {
     $alphabet = '';
     foreach ($letters as $letter) {
         if (isset($_GET['letter']) && strtolower($_GET['letter']) == strtolower($letter[0])) {
-            $alphabet .= utf8_decode($letter[0]) . ' | ';
+            $alphabet .= $letter[0] . ' | ';
         } else {
-            $alphabet .= '<a href="?letter=' . $letter[0] . '">' . utf8_decode($letter[0]) . '</a> | ';
+            $alphabet .= '<a href="?letter=' . $letter[0] . '">' . $letter[0] . '</a> | ';
         }
     }
 
