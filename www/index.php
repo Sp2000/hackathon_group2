@@ -24,7 +24,7 @@
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
         <script src="scripts/lib.js"></script>
-        <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
 
@@ -90,7 +90,7 @@
         $stmt = $dbh->prepare($q);
         $stmt->execute(array(getLetter() . '%'));
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<tr id="id_' . $row['id'] . '"><td class="name">' . $row['scientificName'] . "</td>
+            echo '<tr id="id_' . $row['id'] . '" class="'. (!empty($row['annotation']) ? 'marked' : '') . '"><td class="name">' . $row['scientificName'] . "</td>
                 <td><a href='http://www.gbif.org/species/" . $row['gbifKey'] . "#map' target='_blank'>map</a></td>
                 <td><input type='checkbox'" . (!empty($row['annotation']) ? 'checked ' : '') . "
                     onclick='annotate(" . $row['id'] . "," . $row['gbifKey'] . ")'/></td>
