@@ -32,8 +32,8 @@ using the AnnoSys service.</p>
 <p><?php echo setAlphabet(); ?>
 
 <form>
-<table style="margin-top: 25px; width: 100%;">
-<tr><th>Name</th><th>Map at GBIF</th><th>Blackist</th><th>annotation message</th></tr>
+<table style="margin-top: 25px; width: 1000px;">
+<tr><th>Name</th><th>Map at GBIF</th><th>Blackist</th><th>Message</th></tr>
 
 <?php
 $q = 'select * from comparison where inNsr = 0 and scientificName like ? order by scientificName';

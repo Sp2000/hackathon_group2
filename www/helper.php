@@ -31,3 +31,10 @@ function getLetter () {
     }
     return 'A';
 }
+
+function storeAnnotation ($key, $json) {
+    include 'connect.php';
+    $stmt = $dbh->query('update comparison set ');
+    $letters = $stmt->fetchAll(PDO::FETCH_NUM);
+
+}
