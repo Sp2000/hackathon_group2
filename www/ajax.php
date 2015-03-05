@@ -20,7 +20,7 @@ function annotate ($key) {
 
     $response = curl_exec($ch);
     if ($response) {
-        //storeAnnotation($key, $response);
+        storeAnnotation($key, $response);
         return $response;
     }
 

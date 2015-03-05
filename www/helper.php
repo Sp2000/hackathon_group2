@@ -21,6 +21,7 @@ function setAlphabet () {
             $alphabet .= '<a href="?letter=' . $letter[0] . '">' . $letter[0] . '</a> | ';
         }
     }
+    unset($dbh);
 
     return substr($alphabet, 0, -3);
 }
@@ -34,7 +35,7 @@ function getLetter () {
 
 function storeAnnotation ($key, $json) {
     include 'connect.php';
-    $stmt = $dbh->query('update comparison set ');
-    $letters = $stmt->fetchAll(PDO::FETCH_NUM);
-
+    $stmt = $dbh->prepare('update comparison set annotation = ? where gbifKey = ?');
+    $stmt->execute(array($json, $key));
+    unset($dbh);
 }
