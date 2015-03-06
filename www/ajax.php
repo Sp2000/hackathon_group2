@@ -11,7 +11,9 @@ function annotate ($key) {
     $data = array(
         'taxonInScopeUri' => 'http://www.gbif.org/species/' . $key,
         'taxonInScopeName' => getTaxonName($key),
-        'comment' => 'http://rs.gbif.org/terms/ao#ImplausibleDistribution'
+        'statement' => 'http://rs.gbif.org/terms/ao#ImplausibleDistribution',
+        'area' => 'http://rs.tdwg.org/ontology/voc/GeographicRegion.rdf#NET',
+        // 'comment' => 'my comment ...' // optional !
     );
     $ch = curl_init($url . http_build_query($data) );
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
