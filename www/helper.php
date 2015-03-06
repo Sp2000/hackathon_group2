@@ -46,5 +46,5 @@ function printAnnotation ($json) {
     }
     $data = json_decode($json);
     return '<a href="' . $data->repositoryURI . '" target="annotation">' .
-        $data->repositoryURI . ": " . urldecode($data->comment) . '</a>';
+        $data->repositoryURI . ": " . urldecode($data->statement) . '</a>';
 }
